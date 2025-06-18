@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Map Section</title>
+    <style>
+        .chq-clean-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .chq-clean-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .chq-clean-map-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .chq-clean-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #007bff;
+        }
+
+        .chq-clean-accordion {
+            width: 100%;
+        }
+
+        .chq-clean-accordion-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .chq-clean-accordion-header {
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chq-clean-accordion-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .chq-clean-accordion-content {
+            padding: 15px;
+            display: none;
+            background-color: #fff;
+        }
+
+        .chq-clean-accordion-item.active .chq-clean-accordion-content {
+            display: block;
+        }
+
+        .chq-clean-accordion-item.active .chq-clean-accordion-header {
+            background-color: #e9ecef;
+        }
+
+        .chq-clean-chevron {
+            transition: transform 0.3s ease;
+            font-size: 16px;
+        }
+
+        .chq-clean-accordion-item.active .chq-clean-chevron {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .chq-clean-title {
+                font-size: 20px;
+            }
+
+            .chq-clean-accordion-header h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chq-clean-container">
+        <h2 class="chq-clean-title">2. Nаvеd уару</h2>
+        <div class="chq-clean-map-container">
+            <iframe class="chq-clean-map" src="map-source-url" frameborder="0"></iframe>
+        </div>
+        <div class="chq-clean-accordion">
+            <div class="chq-clean-accordion-item">
+                <div class="chq-clean-accordion-header">
+                    <h3>Accordion Item 1</h3>
+                    <span class="chq-clean-chevron">▼</span>
+                </div>
+                <div class="chq-clean-accordion-content">
+                    <p>Content for accordion item 1 goes here.</p>
+                </div>
+            </div>
+            <div class="chq-clean-accordion-item">
+                <div class="chq-clean-accordion-header">
+                    <h3>Accordion Item 2</h3>
+                    <span class="chq-clean-chevron">▼</span>
+                </div>
+                <div class="chq-clean-accordion-content">
+                    <p>Content for accordion item 2 goes here.</p>
+                </div>
+            </div>
+            <!-- Add more accordion items as needed -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.chq-clean-accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
