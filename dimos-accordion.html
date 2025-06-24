@@ -1,0 +1,133 @@
+<style>
+    :root {
+        --main-text-size: 18px;
+        --h4-font-size: 20px;
+
+        --clr-accept: #067B04;
+        --clr-accept-light: #e6f2e6;
+
+        --clr-reject: #B20000;
+        --clr-reject-bg: #f7e5e5;
+    }
+</style>
+
+<hr class="blue mt-5 mb-0"/>
+<!--Accordion Wrapper-->
+<div class="accordion pt-0">
+    <!-- Accordion Item 1 -->
+    <h3>Πρόγραμμα και Χάρτης αποκομιδής</h3>
+    <div>
+        <div class="chq-clean-accordion-body chq-clean-open" id="chq-clean-accordion-body-1">
+            <script type="text/javascript">
+                // Set up a message listener for cross-origin communication
+                window.addEventListener('message', function(event) {
+                  // Check origin for security (adjust to match your iframe source)
+                  if (event.origin === "https://chania-map.smartiscity.gr") {
+                    if (event.data && event.data.type === 'resize') {
+                      const iframe = document.getElementById('idIframe');
+                      iframe.style.height = event.data.height + 'px';
+                    }
+                  }
+                });
+            </script>
+              
+            <div class="responsive-iframe-container">
+                <iframe id="idIframe" class="iframe-map" src="https://chania-map.smartiscity.gr" allow="geolocation"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion Item 2 -->
+    <h3>Ανακύκλωση</h3>
+    <div>
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/icons/blue_bin_icon.svg">
+                <div class="logo-text">ΜΠΛΕ</div>
+            </div>
+            <div class="recycle-button"><img class="custom-margin-img" src="https://needahat.github.io/majestcx-clean-chania-portal/img/icons/no_bag_icon.svg"> πετάμε χωρίς σακούλα</div>
+        </div>
+
+        <!-- Intro Section -->
+        <div class="intro-section">
+            <p class="intro-text">
+                Στον μπλε κάδο ανακυκλώνονται πλαστικές, χάρτινες, αλουμινένιες, 
+                και από λευκοσίδηρο (σιδηρούχες) συσκευασίες.
+            </p>
+            <img src="https://needahat.github.io/majestcx-clean-chania-portal/">
+        </div>
+
+        <!-- What We Accept -->
+        <div class="section accepted">
+            <div class="section-header">
+                <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/icons/checkmark.svg">
+                <div class="section-title">Τι απορρίπτουμε</div>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>Πλαστικές συσκευασίες από νερό, αναψυκτικά, λάδι, βούτυρο, γιαούρτι, οδοντόκρεμες, απορρυπαντικά, αποσμητικά, καλλυντικά, σακούλες κ.α.</li>
+                    <li>Χάρτινες συσκευασίες από τρόφιμα, απορρυπαντικά, περιοδικά, εφημερίδες και μεγάλες κούτες συσκευασίας (συμπιεσμένες).</li>
+                    <li>Αλουμινένιες και από λευκοσίδηρο (σιδηρούχες) συσκευασίες από μπίρες, αναψυκτικά, καφέ, γάλα, ζωοτροφές, τοματοπολτό, κονσέρβες, κ.α.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- What We Don't Accept -->
+        <div class="section rejected">
+            <div class="section-header">
+                <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/icons/x_mark.svg">
+                <div class="section-title">Τι δεν απορρίπτουμε</div>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>Σκουπίδια</li>
+                    <li>Υγρά</li>
+                    <li>Μαγειρικά λάδια, λίπη</li>
+                    <li>Βιοαπόβλητα</li>
+                    <li>Γυάλινες συσκευασίες</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Advice Section -->
+        <div class="advice-section">
+            <div class="advice-content">
+                <div class="advice-title">Συμβουλή!</div>
+                <p class="advice-text">
+                    Κάνω διαχωρισμό των <strong>πλαστικών μπουκαλιών από τα καπάκια</strong> και τα 
+                    απορρίπτω στις «καρδιές» που βρίσκονται σε κεντρικά σημεία του Δήμου.
+                </p>
+            </div>
+            <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/images/heart_bin_trasparent.png">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle accordion functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionHeaders = document.querySelectorAll('.chq-clean-accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    // Get the corresponding body element
+                    const accordionBody = header.nextElementSibling;
+                    // Toggle the 'chq-clean-active' class on the header
+                    header.classList.toggle('chq-clean-active');
+                    // Toggle the 'chq-clean-open' class on the body
+                    accordionBody.classList.toggle('chq-clean-open');
+
+                    // If the body is now open, set its max-height to its scrollHeight
+                    // Otherwise, set it to 0
+                    if (accordionBody.classList.contains('chq-clean-open')) {
+                        accordionBody.style.maxHeight = (accordionBody.scrollHeight + 50) + 'px';
+                    } else {
+                        accordionBody.style.maxHeight = '0';
+                    }
+                });
+            });
+        });
+    </script>
+</div>
+
+
