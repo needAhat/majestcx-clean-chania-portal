@@ -20,7 +20,6 @@
     }
 </style>
 
-<hr class="blue mt-5 mb-0"/>
 <!--Accordion Wrapper-->
 <div class="accordion pt-0">
     <!-- Accordion Item 1 -->
@@ -52,10 +51,11 @@
         <!-- Header -->
         <div class="header">
             <div class="logo-section">
-                <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/icons/blue_bin_icon.svg">
+                <!--https://www.chania.gr/files/48/48641/blue_bin_icon.svg src="/files/58/48641/blue_bin.jpg"-->
+                <img src="/files/58/48641/blue_bin_icon.svg">
                 <div class="logo-text">ΜΠΛΕ</div>
             </div>
-            <div class="recycle-button"><img class="custom-margin-img" src="https://needahat.github.io/majestcx-clean-chania-portal/img/icons/no_bag_icon.svg"> πετάμε χωρίς σακούλα</div>
+            <div class="recycle-button"><img class="custom-margin-img" src="/files/58/48641/no_bag_icon.svg"> πετάμε χωρίς σακούλα</div>
         </div>
 
         <!-- Intro Section -->
@@ -64,13 +64,13 @@
                 Στον μπλε κάδο ανακυκλώνονται πλαστικές, χάρτινες, αλουμινένιες, 
                 και από λευκοσίδηρο (σιδηρούχες) συσκευασίες.
             </p>
-            <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/images/blue_bin.jpg">
+            <img src="/files/58/48641/blue_bin.jpg">
         </div>
 
         <!-- What We Accept -->
         <div class="section accepted">
             <div class="section-header">
-                <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/icons/checkmark.svg">
+                <img src="/files/58/48641/checkmark.svg">
                 <div class="section-title">Τι απορρίπτουμε</div>
             </div>
             <div class="section-content">
@@ -85,7 +85,7 @@
         <!-- What We Don't Accept -->
         <div class="section rejected">
             <div class="section-header">
-                <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/icons/x_mark.svg">
+                <img src="/files/58/48641/x_mark.svg">
                 <div class="section-title">Τι δεν απορρίπτουμε</div>
             </div>
             <div class="section-content">
@@ -108,35 +108,9 @@
                     απορρίπτω στις «καρδιές» που βρίσκονται σε κεντρικά σημεία του Δήμου.
                 </p>
             </div>
-            <img src="https://needahat.github.io/majestcx-clean-chania-portal/img/images/heart_bin_trasparent.png">
+            <img src="/files/58/48641/heart_bin_trasparent.png">
         </div>
     </div>
-
-    <script>
-        // JavaScript to handle accordion functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const accordionHeaders = document.querySelectorAll('.chq-clean-accordion-header');
-
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    // Get the corresponding body element
-                    const accordionBody = header.nextElementSibling;
-                    // Toggle the 'chq-clean-active' class on the header
-                    header.classList.toggle('chq-clean-active');
-                    // Toggle the 'chq-clean-open' class on the body
-                    accordionBody.classList.toggle('chq-clean-open');
-
-                    // If the body is now open, set its max-height to its scrollHeight
-                    // Otherwise, set it to 0
-                    if (accordionBody.classList.contains('chq-clean-open')) {
-                        accordionBody.style.maxHeight = (accordionBody.scrollHeight + 50) + 'px';
-                    } else {
-                        accordionBody.style.maxHeight = '0';
-                    }
-                });
-            });
-        });
-    </script>
 </div>
 
 
