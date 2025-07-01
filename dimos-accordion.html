@@ -8,6 +8,9 @@
 
         --clr-reject: #B20000;
         --clr-reject-bg: #f7e5e5;
+
+        --clr-chq-blue: #2B6181;
+        --clr-chq-dark-blue: #003366;
     }
 
     .iframe-map {
@@ -17,6 +20,284 @@
         overflow:hidden; 
         border-radius: 4px;
         min-height: 640px;  /*desktop view*/
+    }
+
+    .custom-margin-img {
+        margin: 2px !important;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo-text {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .recycle-button {
+        background: var(--clr-chq-blue);
+        color: white;
+        font-weight: bold;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        border: none;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .intro-section {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .intro-text {
+        flex: 1;
+        line-height: 1.5;
+        color: #333;
+    }
+
+    .section {
+        margin: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .accepted {
+        background: var(--clr-accept-light);
+    }
+
+    .rejected {
+        background: var(--clr-reject-bg);
+    }
+
+    .section-header {
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .accepted .section-title {
+        color: var(--clr-accept);
+    }
+
+    .rejected .section-title {
+        color: var(--clr-reject);
+    }
+
+    .section-content {
+        padding: 0 20px 20px;
+    }
+
+    .section-content ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .section-content li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+        line-height: 1.4;
+    }
+
+    .accepted li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--clr-accept);
+        font-weight: bold;
+    }
+
+    .rejected li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--clr-reject);
+        font-weight: bold;
+    }
+
+    .advice-section {
+        margin: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .advice-content {
+        flex: 1;
+    }
+
+    .advice-title {
+        font-size: var(--h4-font-size);
+        font-weight: bold;
+        color: var(--clr-chq-dark-blue);
+        margin-bottom: 10px;
+    }
+
+    .advice-text {
+        color: var(--clr-chq-dark-blue);
+    }
+
+    .bin_section {
+        border-radius: 8px;
+        border: 2px solid #DEE3E6;
+        background: #FFF;
+        margin-bottom: 24px;
+    }
+
+    .contact-container {
+        border-left: 4px solid var(--clr-chq-blue); 
+        padding: 24px;
+        margin: 24px; 
+        border-radius: 0 8px 8px 0; 
+    }
+
+    .contact-title {
+        display: flex;
+        align-items: center;
+        color: var(--clr-chq-dark-blue); /* Dark blue color for text */
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+
+    .contact-links-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contact-link {
+        margin: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #dbe1e4; /* Lighter grey background for buttons */
+        color: var(--clr-chq-dark-blue); /* Blue text color */
+        text-decoration: underline;
+        padding: 24px;
+        border-radius: 8px; 
+        font-size: 1rem; /* 16px */
+        font-weight: 500;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .contact-link:hover {
+        background-color: #d4dde4; /* Slightly darker on hover */
+        transform: translateY(-2px); /* Slight lift effect on hover */
+        color: var(--clr-chq-dark-blue);
+    }
+
+    @media (max-width: 768px) { /* Tablet */
+        .contact-links-grid {
+            grid-template-columns: 1fr; /* Single column on smaller screens */
+        }
+
+        .contact-container {
+            padding: 16px;
+        }
+
+        .contact-title {
+            font-size: 1.1rem;
+        }
+
+        .contact-link {
+            padding: 14px;
+            font-size: 0.95rem;
+        }
+
+        .container {
+            margin: 12px;
+        }
+        
+        .header {
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+        
+        .intro-section {
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+        }
+        
+        .advice-section {
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+        }
+        
+        .section {
+            margin: 15px;
+        }
+    }
+
+    @media (max-width: 480px) { /* Phone */
+        body {
+            padding: 10px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+        }
+        
+        .intro-text {
+            font-size: 16px;
+        }
+        
+        .section-content li {
+            font-size: 16px;
+        }
+
+        .advice-text {
+            font-size: 16px;
+        }
     }
 </style>
 
@@ -46,72 +327,322 @@
         </div>
     </div>
 
-    <!-- Accordion Item 2 -->
+    <!-- Accordion Item - Recycling -->
     <h3>Ανακύκλωση</h3>
     <div>
-        <!-- Header -->
-        <div class="header">
-            <div class="logo-section">
-                <!--https://www.chania.gr/files/48/48641/blue_bin_icon.svg src="_files/58/48641/blue_bin.jpg"-->
-                <img src="_files/58/48641/blue_bin_icon.svg">
-                <div class="logo-text">ΜΠΛΕ</div>
+        <!-- Blue Bin -->
+        <div class="bin_section">
+            <div class="header">
+                <div class="logo-section">
+                    <!--files/48/48641/blue_bin_icon.svg src="_files/58/48641/blue_bin.jpg"-->
+                    <img src="files/58/48641/blue_bin_icon.jpg">
+                    <div class="logo-text">ΜΠΛΕ</div>
+                </div>
+                <div class="recycle-button"><img class="custom-margin-img" src="files/58/48641/no_bag_icon.png"> πετάμε χωρίς σακούλα</div>
             </div>
-            <div class="recycle-button"><img class="custom-margin-img" src="_files/58/48641/no_bag_icon.svg"> πετάμε χωρίς σακούλα</div>
-        </div>
 
-        <!-- Intro Section -->
-        <div class="intro-section">
-            <p class="intro-text">
-                Στον μπλε κάδο ανακυκλώνονται πλαστικές, χάρτινες, αλουμινένιες, 
-                και από λευκοσίδηρο (σιδηρούχες) συσκευασίες.
-            </p>
-            <img src="_files/58/48641/blue_bin.jpg">
-        </div>
-
-        <!-- What We Accept -->
-        <div class="section accepted">
-            <div class="section-header">
-                <img src="_files/58/48641/checkmark.svg">
-                <div class="section-title">Τι απορρίπτουμε</div>
-            </div>
-            <div class="section-content">
-                <ul>
-                    <li>Πλαστικές συσκευασίες από νερό, αναψυκτικά, λάδι, βούτυρο, γιαούρτι, οδοντόκρεμες, απορρυπαντικά, αποσμητικά, καλλυντικά, σακούλες κ.α.</li>
-                    <li>Χάρτινες συσκευασίες από τρόφιμα, απορρυπαντικά, περιοδικά, εφημερίδες και μεγάλες κούτες συσκευασίας (συμπιεσμένες).</li>
-                    <li>Αλουμινένιες και από λευκοσίδηρο (σιδηρούχες) συσκευασίες από μπίρες, αναψυκτικά, καφέ, γάλα, ζωοτροφές, τοματοπολτό, κονσέρβες, κ.α.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- What We Don't Accept -->
-        <div class="section rejected">
-            <div class="section-header">
-                <img src="_files/58/48641/x_mark.svg">
-                <div class="section-title">Τι δεν απορρίπτουμε</div>
-            </div>
-            <div class="section-content">
-                <ul>
-                    <li>Σκουπίδια</li>
-                    <li>Υγρά</li>
-                    <li>Μαγειρικά λάδια, λίπη</li>
-                    <li>Βιοαπόβλητα</li>
-                    <li>Γυάλινες συσκευασίες</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Advice Section -->
-        <div class="advice-section">
-            <div class="advice-content">
-                <div class="advice-title">Συμβουλή!</div>
-                <p class="advice-text">
-                    Κάνω διαχωρισμό των <strong>πλαστικών μπουκαλιών από τα καπάκια</strong> και τα 
-                    απορρίπτω στις «καρδιές» που βρίσκονται σε κεντρικά σημεία του Δήμου.
+            <!-- Intro Section -->
+            <div class="intro-section">
+                <p class="intro-text">
+                    Στον μπλε κάδο ανακυκλώνονται πλαστικές, χάρτινες, αλουμινένιες, 
+                    και από λευκοσίδηρο (σιδηρούχες) συσκευασίες.
                 </p>
+                <img src="files/58/48641/blue_bin.jpg">
             </div>
-            <img src="_files/58/48641/heart_bin_trasparent.png">
+
+            <!-- What We Accept -->
+            <div class="section accepted">
+                <div class="section-header">
+                    <img src="files/58/48641/check_mark_icon.png">
+                    <div class="section-title">Τι απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Πλαστικές συσκευασίες από νερό, αναψυκτικά, λάδι, βούτυρο, γιαούρτι, οδοντόκρεμες, απορρυπαντικά, αποσμητικά, καλλυντικά, σακούλες κ.α.</li>
+                        <li>Χάρτινες συσκευασίες από τρόφιμα, απορρυπαντικά, περιοδικά, εφημερίδες και μεγάλες κούτες συσκευασίας (συμπιεσμένες).</li>
+                        <li>Αλουμινένιες και από λευκοσίδηρο (σιδηρούχες) συσκευασίες από μπίρες, αναψυκτικά, καφέ, γάλα, ζωοτροφές, τοματοπολτό, κονσέρβες, κ.α.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- What We Don't Accept -->
+            <div class="section rejected">
+                <div class="section-header">
+                    <img src="files/58/48641/x_mark_Icon.png">
+                    <div class="section-title">Τι δεν απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Σκουπίδια</li>
+                        <li>Υγρά</li>
+                        <li>Μαγειρικά λάδια, λίπη</li>
+                        <li>Βιοαπόβλητα</li>
+                        <li>Γυάλινες συσκευασίες</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Advice Section -->
+            <div class="advice-section">
+                <div class="advice-content">
+                    <div class="advice-title">Συμβουλή!</div>
+                    <p class="advice-text">
+                        Κάνω διαχωρισμό των <strong>πλαστικών μπουκαλιών από τα καπάκια</strong> και τα 
+                        απορρίπτω στις «καρδιές» που βρίσκονται σε κεντρικά σημεία του Δήμου.
+                    </p>
+                </div>
+                <img src="files/58/48641/heart_bin_trasparent.png">
+            </div>
         </div>
+
+
+        <!-- Paper Bin -->
+        <div class="bin_section">
+            <div class="header">
+                <div class="logo-section">
+                    <img src="files/58/48641/blue_bin_with_yellow_top_icon.png">
+                    <div class="logo-text">ΜΠΛΕ ΜΕ ΚΙΤΡΙΝΟ ΚΑΠΑΚΙ</div>
+                </div>
+                <div class="recycle-button"><img class="custom-margin-img" src="files/58/48641/no_bag_icon.png"> πετάμε χωρίς σακούλα</div>
+            </div>
+
+            <!-- Intro Section -->
+            <div class="intro-section">
+                <p class="intro-text">
+                    Στον μπλε κάδο με κίτρινο καπάκι ανακυκλώνεται το καθαρό χαρτί.
+                </p>
+                <img src="files/58/48641/blue_bin_with_yellow_top.png">
+            </div>
+
+            <!-- What We Accept -->
+            <div class="section accepted">
+                <div class="section-header">
+                    <img src="files/58/48641/check_mark_icon.png">
+                    <div class="section-title">Τι απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>ΜΟΝΟ καθαρά χαρτιά</li>
+                        <li>Χάρτινες συσκευασίες προϊόντων</li>
+                        <li>Διπλωμένες κούτες</li>
+                        <li>Περιοδικά, εφημερίδες, βιβλία</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- What We Don't Accept -->
+            <div class="section rejected">
+                <div class="section-header">
+                    <img src="files/58/48641/x_mark_Icon.png">
+                    <div class="section-title">Τι δεν απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Θερμικά χαρτιά (αποδείξεις)</li>
+                        <li>Χαρτιά υγείας / κουζίνας / χαρτοπετσέτες</li>
+                        <li>Χάρτινα περιτυλίγματα (από σοκολάτες, γλυκά και δώρα)</li>
+                        <li>Καρμπόν / λαδόκολλα</li>
+                        <li>Χάρτινα ποτήρια και πιάτα</li>
+                        <li>Λερωμένα χαρτιά / χαρτόνια (όπως κουτί από πίτσα)</li>
+                        <li>Άλλες συσκευασίες (Tetrapak, κουτί γάλακτος & χυμού, αλουμινίου, πλαστικές, μεταλλικές & γυάλινες)</li>
+                        <li>Βιοαπόβλητα</li>
+                        <li>Φάρμακα & επικίνδυνα υλικά</li>
+                        <li>Πλαστικές σακούλες</li>
+                        <li>Κοινά απορρίμματα κ.α.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Bins -->
+        <div class="bin_section">
+            <div class="header">
+                <div class="logo-section">
+                    <img src="files/58/48641/3_micro_trash_recycling_bins_icon.png">
+                    <div class="logo-text">ΣΥΣΤΟΙΧΙΕΣ 3 ΕΙΔΩΝ ΑΝΑΚΥΚΛΩΣΙΜΩΝ ΜΙΚΡΟΑΠΟΡΡΙΜΜΑΤΩΝ</div>
+                </div>
+                <div class="recycle-button"><img class="custom-margin-img" src="files/58/48641/no_bag_icon.png"> πετάμε χωρίς σακούλα</div>
+            </div>
+
+            <!-- Intro Section -->
+            <div class="intro-section">
+                <div class="intro-text">
+                    <p>Οι συστοιχίες ανακύκλωσης, περιλαμβάνουν τρεις διαφορετικούς κάδους για τη συλλογή ανακυκλώσιμων μικροαπορριμμάτων:</p>
+                    <ul>
+                        <li>πλαστικών και μεταλλικών συσκευασιών (μπλε σήμανση).</li>
+                        <li>συσκευασιών Tetrapak (άσπρη σήμανση)</li>
+                        <li>έντυπου χαρτιού και χάρτινων συσκευασιών (κίτρινη σήμανση)</li>
+                    </ul>
+                </div>
+                <img src="files/58/48641/3_micro_trash_recycling_bins.png">
+            </div>
+
+            <!-- What We Accept -->
+            <div class="section accepted">
+                <div class="section-header">
+                    <img src="files/58/48641/check_mark_icon.png">
+                    <div class="section-title">Τι απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Γυάλινα μπουκάλια από αλκοολούχα ποτά, κρασί, αναψυκτικά, νερό, λάδι κ.ά.</li>
+                        <li>Βαζάκια τροφίμων από μαρμελάδες, μέλι, ντοματοπολτούς κ.ά.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- What We Don't Accept -->
+            <div class="section rejected">
+                <div class="section-header">
+                    <img src="files/58/48641/x_mark_Icon.png">
+                    <div class="section-title">Τι δεν απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Υλικά που είναι γυάλινα αλλά δεν αποτελούν συσκευασία, δηλ., ποτήρια, πιάτα, τζάμια, καθρέπτες, τασάκια, κούπες κ.α.</li>
+                        <li>Λαμπτήρες</li>
+                        <li>Συσκευασίες άλλου είδους (πλαστικές, tetrapak κλπ.)</li>
+                        <li>Υγρά</li>
+                        <li>Μαγειρικά λάδια, λίπη</li>
+                        <li>Πλαστικές σακούλες</li>
+                        <li>Ανακυκλώσιμα υλικά</li>
+                        <li>Σκουπίδια</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glass Bin -->
+        <div class="bin_section">
+            <div class="header">
+                <div class="logo-section">
+                    <img src="files/58/48641/yellow_bell_bin_icon.png">
+                    <div class="logo-text">ΚΙΤΡΙΝΟΣ ΚΩΔΩΝΑΣ</div>
+                </div>
+                <div class="recycle-button"><img class="custom-margin-img" src="files/58/48641/no_bag_icon.png"> πετάμε χωρίς σακούλα</div>
+            </div>
+
+            <!-- Intro Section -->
+            <div class="intro-section">
+                <div class="intro-text">
+                    <b>Προσοχή!</b>
+                    <ul>
+                        <li>Αδειάζουμε τις γυάλινες συσκευασίες από τυχόν υπολείμματα.</li>
+                        <li>Πλένουμε και αφαιρούμε καπάκια και ετικέτες από μπουκάλια και βάζα.</li>
+                        <li>Προσπαθούμε να μην σπάσει το γυαλί που πάμε για ανακύκλωση.</li>
+                        <li>Απορρίπτουμε τις γυάλινες συσκευασίες μέσα στον κώδωνα χωρίς τη σακούλα.</li>
+                    </ul>
+                </div>
+                <img src="files/58/48641/yellow_bell_bin.png">
+            </div>
+
+            <!-- What We Accept -->
+            <div class="section accepted">
+                <div class="section-header">
+                    <img src="files/58/48641/check_mark_icon.png">
+                    <div class="section-title">Τι απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Γυάλινα μπουκάλια από αλκοολούχα ποτά, κρασί, αναψυκτικά, νερό, λάδι κ.ά.</li>
+                        <li>Βαζάκια τροφίμων από μαρμελάδες, μέλι, ντοματοπολτούς κ.ά.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- What We Don't Accept -->
+            <div class="section rejected">
+                <div class="section-header">
+                    <img src="files/58/48641/x_mark_Icon.png">
+                    <div class="section-title">Τι δεν απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Υλικά που είναι γυάλινα αλλά δεν αποτελούν συσκευασία, δηλ., ποτήρια, πιάτα, τζάμια, καθρέπτες, τασάκια, κούπες κ.α.</li>
+                        <li>Λαμπτήρες</li>
+                        <li>Συσκευασίες άλλου είδους (πλαστικές, tetrapak κλπ.)</li>
+                        <li>Υγρά</li>
+                        <li>Μαγειρικά λάδια, λίπη</li>
+                        <li>Πλαστικές σακούλες</li>
+                        <li>Ανακυκλώσιμα υλικά</li>
+                        <li>Σκουπίδια</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brown Bin -->
+        <div class="bin_section">
+            <div class="header">
+                <div class="logo-section">
+                    <img src="files/58/48641/brown_bin_icon.png">
+                    <div class="logo-text">ΚΑΦΕ ΚΑΔΟΣ</div>
+                </div>
+                <div class="recycle-button"><img class="custom-margin-img" src="files/58/48641/no_bag_icon.png"> πετάμε χωρίς σακούλα</div>
+            </div>
+
+            <!-- Intro Section -->
+            <div class="intro-section">
+                <div class="intro-text">
+                    <b>Τί και πώς ανακυκλώνουμε στους καφέ κάδους;</b>
+                </div>
+                <img src="files/58/48641/brown_bin.png">
+            </div>
+
+            <!-- What We Accept -->
+            <div class="section accepted">
+                <div class="section-header">
+                    <img src="files/58/48641/check_mark_icon.png">
+                    <div class="section-title">Τι απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Φρούτα και Λαχανικά</li>
+                        <li>Κρέας και Ψάρια (και τα κόκκαλα)</li>
+                        <li>Ζυμαρικά, Ρύζι και Όσπρια</li>
+                        <li>Ψωμί, Κέικ, Γλυκά</li>
+                        <li>Γαλακτοκομικά (τυρί, παχύρευστες κρέμες, γιαούρτι)</li>
+                        <li>Αυγά (και τα τσόφλια)</li>
+                        <li>Υπολείμματα και φίλτρα καφέ και τσαγιού</li>
+                        <li>Μικρές ποσότητες υπολειμμάτων κήπου (γκαζόν, φύλλα, μικρά κλαδιά κ.λπ.)</li>
+                        <li>Μικρές ποσότητες από χαρτί κουζίνας ή χαρτοπετσέτες (που δεν έχουν χρησιμοποιηθεί για λόγους προσωπικής υγιεινής), αλλά όχι χρωματιστά, γυαλιστερά ή πλαστικοποιημένα χαρτιά</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- What We Don't Accept -->
+            <div class="section rejected">
+                <div class="section-header">
+                    <img src="files/58/48641/x_mark_Icon.png">
+                    <div class="section-title">Τι δεν απορρίπτουμε</div>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>Συσκευασίες κάθε είδους</li>
+                        <li>Υγρά</li>
+                        <li>Μαγειρικά λάδια, λίπη</li>
+                        <li>Πλαστικές σακούλες</li>
+                        <li>Ανακυκλώσιμα υλικά</li>
+                        <li>Σκουπίδια</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
 
+<div class="contact-container">
+    <h3 class="contact-title">
+        <img src="/files/58/48641/information_icon.png">&nbsp;
+        Επικοινωνία
+    </h3>
+    <div class="contact-links-grid">
+        <a href="https://www.chania.gr/eksypiretisi/clean-town" class="contact-link">Ηλεκτρονικές υπηρεσίες</a>
+        <a href="https://www.chania.gr/c-request.html?id=4" class="contact-link">Δήλωση καταγγελίας - παραπόνου</a>
+        <a href="https://www.chania.gr/enimerosi/prosvash/prosvasi-yphr.html" class="contact-link">Δια ζώσης πρόσβαση (διεύθυνση και ωράριο)</a>
+        <a href="https://www.chania.gr/files/54/35644/phones.pdf" class="contact-link">Τηλεφωνικός κατάλογος</a>
+    </div>
+</div>
